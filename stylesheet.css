@@ -3,6 +3,7 @@ body		{
 	color: darkred;
 	font-family: "Courier New", "Times New Roman", Times, serif;
 	font-size: 100%;
+	margin: auto;
 }
 
 p 		{
