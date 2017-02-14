@@ -1,20 +1,40 @@
-body		{
-    	background-color: ghostwhite;
+body	{
+    background-color: ghostwhite;
 	color: darkred;
 	font-family: "Courier New", "Times New Roman", Times, serif;
 	font-size: 100%;
+	
+}
+
+h1		{
+	margin: auto;
+	text-align: center;
+}	
+
+div 	{
+	margin: auto;
+	width: 300px;
+	padding: 25px;
 	text-align: center;
 }
 
-p 		{
-	width: 300px;
+table	{
 	border: 10px solid darkred;
-	padding: 25px;
 }
-
-
-
-a:link		{
+th		{
+	width: 500px;
+}
+	
+a:link	{
 	color: black;
 	font-weight: bold;
+}
+
+img		{
+	width: 150px;
+	height: 249px;
+}
+
+.list {
+	text-align: left;
 }
