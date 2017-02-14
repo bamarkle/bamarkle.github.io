@@ -13,6 +13,8 @@ p, ul		{
 }
 
 
+
 a:link		{
 	color: white;
+	font-weight: bold;
 }
