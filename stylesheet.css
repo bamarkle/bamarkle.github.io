@@ -1,15 +1,12 @@
-body
-	{
+body	{
     	background-color: lightblue;
 	}
 
-p
-	{
+p	{
 	font-family: "Courier New", "Times New Roman", Times, serif;
 	font-size: 100%;
 	}
 
-h1
-	{
+h1	{
 	font-weight: bold
 	}
