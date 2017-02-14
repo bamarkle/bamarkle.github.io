@@ -5,16 +5,17 @@ body		{
 	font-size: 100%;
 }
 
-p, ul		{
+p, 		{
 	width: 300px;
 	border: 10px solid darkred;
 	padding: 25px;
-	margin: 25px;
+	margin-left: 100px;
+	margin-right: 150px;
 }
 
 
 
 a:link		{
-	color: white;
+	color: black;
 	font-weight: bold;
 }
