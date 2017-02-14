@@ -1,13 +1,13 @@
-body	{
+body		{
     	background-color: burlywood;
 	color: darkred;
-	}
-
-p, li	{
 	font-family: "Courier New", "Times New Roman", Times, serif;
 	font-size: 100%;
-	}
+}
 
-h1	{
-	font-weight: bold
-	}
+p, ul		{
+	width: 300px;
+	border: 10px solid darkred;
+	padding: 25px;
+	margin: 25px;
+}
