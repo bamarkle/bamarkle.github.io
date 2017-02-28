@@ -1,0 +1,11 @@
+<<silently>>
+<<cacheaudio "intro1" "media/Intro1.mp3">>
+<<cacheaudio "intro2" "media/Intro2.mp3">>
+<<cacheaudio "whitenoise" "media/whitenoise.mp3">>
+<<cacheaudio "train" "media/train.wav">>
+<<cacheaudio "wheel" "media/wheel.wav">>
+<<cacheaudio "whiteloud" "media/whiteloud.wav">>
+<<cacheaudio "knock" "media/knock.wav">>
+<</silently>>
+
+<<audio "intro1" play>>
