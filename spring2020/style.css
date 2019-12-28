@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+}
+
+button {
+    color: white;
+    font-weight: bolder;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color: black;
+    background-color: darkblue;
+    min-width: 15%;
+    width: auto;
+    max-width: auto;
+    margin: 5px; 
+    text-align: center;
+    padding: 4px;    
+    position: relative;
+    
+}
+button:hover{
+    background-color: white;
+    color: darkblue;
+}
+
+.backgroundsquare {
+    border-style: double;
+    border-width: 10px;
+    padding: 10px;
+    border-color: darkblue;
+}
