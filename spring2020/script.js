@@ -42,7 +42,8 @@ function getRandomInt(max) {
     }
 
 function shuffle() {
-    xTopic = getRandomInt(4);
+    topicLength = topicList.length;
+    xTopic = getRandomInt(topicLength);
     xAudience = getRandomInt(4);
     xGenre = getRandomInt(4);
     document.getElementById("shufTopic").innerHTML = topicList[xTopic];
