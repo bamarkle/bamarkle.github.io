@@ -27,15 +27,35 @@ topicList = ["How to play Dungeons & Dragons",
             "What to do if you are caught in a hurricane"
            ]
 
-audienceList = ["Your auntie",
-                "Your uncle",
-                "Your daddy",
-                "Your momma"]
+audienceList = ["Your boss",
+                "Your teacher",
+                "Your best friend",
+                "Your a five year old child",
+                "An alien from outer space",
+                "Your grandmother",
+                "President of the United States",
+                "Someone who knows absolutely nothing about the topic",
+                "A caveman",
+                "A hermit who hasn't left their house in fifty years",
+                "An expert in the field",
+                "A talking horse, i.e., Mr. Ed",
+                "A strict rule-follower",
+                "A lazy good-for-nothing",
+                "Batman (or the Joker)"]
 
-genreList = ["Shopping list",
-            "Poem",
-            "Musical",
-            "Epic"]
+genreList = ["Poem",
+            "A dramatic production (or musical)",
+            "Epic",
+            "YouTube Video",
+            "Podcast",
+            "Narrative",
+            "Essay",
+            "Business Letter",
+            "Documentary",
+            "Collage",
+            "Song",
+            "Web Page",
+            "Video Game"]
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -43,9 +63,11 @@ function getRandomInt(max) {
 
 function shuffle() {
     topicLength = topicList.length;
+    audienceLength = audienceList.length;
+    genreLength = genreList.length;
     xTopic = getRandomInt(topicLength);
-    xAudience = getRandomInt(4);
-    xGenre = getRandomInt(4);
+    xAudience = getRandomInt(audienceLength);
+    xGenre = getRandomInt(genreLength);
     document.getElementById("shufTopic").innerHTML = topicList[xTopic];
     document.getElementById("shufAudience").innerHTML = audienceList[xAudience];
     document.getElementById("shufGenre").innerHTML = genreList[xGenre];
