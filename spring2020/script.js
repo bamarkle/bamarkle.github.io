@@ -1,3 +1,8 @@
+topic = 0;
+audience = 0;
+genre = 0;
+
+
 topicList = ["How to play Dungeons & Dragons",
             "How to shop for a horse",
             "How to remove a stain from a white shirt",
@@ -57,6 +62,33 @@ genreList = ["Poem",
             "Web Page",
             "Video Game"]
 
+function lockAudience() {
+    if (audience == 0) {
+        audience = 1;
+    }
+    else {
+        audience = 0;
+    }
+}
+
+function lockTopic() {
+    if (topic == 0) {
+        topic = 1;
+    }
+    else {
+        topic = 0;
+    }
+}
+
+function lockGenre() {
+    if (genre == 0) {
+        genre = 1;
+    }
+    else {
+        genre = 0;
+    }
+}
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
     }
@@ -65,10 +97,16 @@ function shuffle() {
     topicLength = topicList.length;
     audienceLength = audienceList.length;
     genreLength = genreList.length;
-    xTopic = getRandomInt(topicLength);
-    xAudience = getRandomInt(audienceLength);
-    xGenre = getRandomInt(genreLength);
-    document.getElementById("shufTopic").innerHTML = topicList[xTopic];
-    document.getElementById("shufAudience").innerHTML = audienceList[xAudience];
-    document.getElementById("shufGenre").innerHTML = genreList[xGenre];
+    if (topic == 0) {
+            xTopic = getRandomInt(topicLength);
+            document.getElementById("shufTopic").innerHTML = topicList[xTopic];
+        }
+    if (audience == 0) {
+            xAudience = getRandomInt(audienceLength);
+            document.getElementById("shufAudience").innerHTML = audienceList[xAudience];
+        }
+    if (genre == 0) {
+            xGenre = getRandomInt(genreLength);
+            document.getElementById("shufGenre").innerHTML = genreList[xGenre];   
+        }
 }
