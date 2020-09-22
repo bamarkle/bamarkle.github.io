@@ -64,7 +64,20 @@ topicList = ["How to play Dungeons & Dragons",
              "How to do your taxes",
              "Safely removing a venomous snake from your home",
              "Prove that the Loch Ness Monster is real",
-             "How to choose a sherpa for your next mountain climbing adventure"
+             "How to choose a sherpa for your next mountain climbing adventure",
+             "Selecting the perfect Valentine's Day present",
+             "How to throw a perfect spiral",
+             "Current fashion trends",
+             "Tipping culture outside of America",
+             "How to roast a chicken",
+             "The unspoken rules of public transportation etiquette",
+             "A description of how Saturn got its rings",
+             "A primer on the big bang theory (not the TV show)",
+             "How atomic energy works",
+             "How to tame a tiger",
+             "Why video games are a good hobby",
+             "How to compose a piece of music",
+             "Choosing a travel destination"
            ]
 
 audienceList = ["Your boss",
