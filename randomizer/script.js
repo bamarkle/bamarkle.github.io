@@ -1,6 +1,6 @@
 topic = 0;
 audience = 0;
-genre = 0;
+genre = 1;
 
 
 topicList = ["How to play Dungeons & Dragons",
