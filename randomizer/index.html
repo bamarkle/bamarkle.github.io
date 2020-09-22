@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rhetorical Shuffler</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <br><br>
+        <h2>Topic: <span id="shufTopic"></span></h2><button onclick="lockTopic();">Lock/Unlock Topic</button>
+        <br><br><br><br>
+        <h2>Audience: <span id="shufAudience"></span></h2><button onclick="lockAudience();">Lock/Unlock Audience</button>
+        <br><br><br><br>
+        <h2>Genre: <span id="shufGenre"></span></h2><button onclick="lockGenre();">Lock/Unlock Genre</button>
+        <br><br>
+        <button id="shufButton" onclick="shuffle();">Truffle Shuffle</button>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
