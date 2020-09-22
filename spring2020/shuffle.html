@@ -13,9 +13,11 @@
     </head>
     <body>
         <br><br>
-        <h2>Topic: <span id="shufTopic"></span></h2>
-        <h2>Audience: <span id="shufAudience"></span></h2>
-        <h2>Genre: <span id="shufGenre"></span></h2>
+        <h2>Topic: <span id="shufTopic"></span></h2><button onclick="lockTopic();">Lock/Unlock Topic</button>
+        <br><br><br><br>
+        <h2>Audience: <span id="shufAudience"></span></h2><button onclick="lockAudience();">Lock/Unlock Audience</button>
+        <br><br><br><br>
+        <h2>Genre: <span id="shufGenre"></span></h2><button onclick="lockGenre();">Lock/Unlock Genre</button>
         <br><br>
         <button id="shufButton" onclick="shuffle();">Truffle Shuffle</button>
         <script src="script.js" async defer></script>
