@@ -1,4 +1,4 @@
-topic = 0;
+topic = 1;
 audience = 0;
 genre = 1;
 
