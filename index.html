@@ -9,43 +9,108 @@
 <body>
 
     <div class="wrapper">
-        <header>
-            </header>
+        <header></header>
 
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Publications</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">CV</a></li>
-                <li><a href="#">NPC</a></li>
+                <li><a href="#about">Home</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#npc">NPC</a></li>
             </ul>
         </nav>
 
         <main>
-            <section class="profile-section">
+            <section id="about" class="profile-section">
                 <img src="media/headshot.jpg" alt="Bradley Markle" class="profile-photo">
-                
                 <div class="profile-text">
                     <h1>Bradley Markle</h1>
                     <div class="subtitle">Digital Narratology & Media Studies</div>
                     <p>
-                        I am a literary scholar and educator specializing in digital media, postmodernism, and narrative theory. My work explores how interactive spaces—specifically video games—construct meaning, disrupt traditional narrative layers, and utilize metaleptic architecture to negotiate player agency.
+                        I am a literary scholar and educator specializing in digital media, postmodernism, and narrative theory. My work explores how interactive spaces construct meaning, disrupt traditional narrative layers, and utilize metaleptic architecture to negotiate player agency.
                     </p>
                 </div>
             </section>
 
-            <section class="content-section">
-                <h2>Recent Work</h2>
-                <div class="publication-card">
-                    <h3>Interactivity and Interruption: Metalepsis as a Pivotal Narrative Device in Gaming</h3>
-                    <p>
-                        Doctoral dissertation exploring the mechanics of boundary-crossing narrative architecture within modern electronic media systems. Analyzes how mechanical disruption functions as an intentional critical device. (ProQuest Publication No. 32445515).
-                    </p>
+            <div class="accordion-container">
+                
+                <div class="accordion-item" id="publications">
+                    <button class="accordion-trigger">
+                        <span>Publications</span>
+                        <span class="icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="content-inner">
+                            <div class="publication-card">
+                                <h3>Interactivity and Interruption: Metalepsis as a Pivotal Narrative Device in Gaming</h3>
+                                <p>Doctoral dissertation exploring the mechanics of boundary-crossing narrative architecture within modern electronic media systems. Analyzes how mechanical disruption functions as an intentional critical device. (ProQuest Publication No. 32445515).</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
+
+                <div class="accordion-item" id="projects">
+                    <button class="accordion-trigger">
+                        <span>Projects</span>
+                        <span class="icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="content-inner">
+                            <p>Digital narrative applications, Godot game engine prototypes, and custom data architectures pipelines live here.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="cv">
+                    <button class="accordion-trigger">
+                        <span>Curriculum Vitae</span>
+                        <span class="icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="content-inner">
+                            <p>Academic appointments, teaching philosophy, and institutional service records.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="npc">
+                    <button class="accordion-trigger">
+                        <span>Narrative. Play. Criticism. (NPC)</span>
+                        <span class="icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="content-inner">
+                            <p>Media analysis projects exploring structural storytelling across interactive platforms.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </main>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const triggers = document.querySelectorAll('.accordion-trigger');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const content = this.nextElementSibling;
+                    
+                    // Toggle active state for styling & indicator rotation
+                    item.classList.toggle('active');
+
+                    // Smooth height transition calculation
+                    if (item.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        content.style.maxHeight = 0;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
