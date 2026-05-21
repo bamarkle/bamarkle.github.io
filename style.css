@@ -171,59 +171,63 @@ main {
     }
     .content-section h2 {
         font-size: 1.25rem;
-/* Accordion Base Styling */
+
+    /* Accordion Container Layout */
 .accordion-container {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .accordion-item {
     border: 1px solid var(--border-gray);
     background-color: #111827;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     border-radius: 6px;
-    overflow: hidden;
+    overflow: hidden; /* CRUCIAL: This hides the text when height goes to 0 */
 }
 
 /* The Clickable Trigger Bar */
 .accordion-trigger {
     width: 100%;
-    background: none;
+    background-color: #161e2e; /* Distinct color from the content area */
     border: none;
-    outline: none;
     padding: 20px 24px;
     color: var(--text-main);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-align: left;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease;
+    -webkit-appearance: none; /* Forces Safari/Chrome to drop default button styles */
+    appearance: none;
 }
 
 .accordion-trigger:hover {
-    background-color: rgba(59, 130, 246, 0.03);
+    background-color: #1f293d; /* Clear hover highlight state */
 }
 
-/* Plus/Minus Indicator morphing via CSS */
+/* Plus/Minus Indicator Design */
 .accordion-trigger .icon {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     position: relative;
+    flex-shrink: 0;
 }
 
+/* Base style for both lines forming the plus sign */
 .accordion-trigger .icon::before,
 .accordion-trigger .icon::after {
     content: '';
     position: absolute;
     background-color: var(--accent-blue);
-    transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
 /* Horizontal line */
 .accordion-trigger .icon::before {
-    top: 5px;
+    top: 7px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -232,17 +236,18 @@ main {
 /* Vertical line */
 .accordion-trigger .icon::after {
     top: 0;
-    left: 5px;
+    left: 7px;
     width: 2px;
     height: 100%;
 }
 
-/* When open, rotate the vertical line away to turn plus into minus */
+/* Active Open States */
 .accordion-item.active .accordion-trigger {
     border-bottom: 1px solid var(--border-gray);
-    background-color: rgba(59, 130, 246, 0.02);
+    background-color: #1a2333;
 }
 
+/* Morph the plus into a minus line by hiding vertical asset */
 .accordion-item.active .accordion-trigger .icon::after {
     transform: rotate(90deg);
     opacity: 0;
@@ -252,17 +257,16 @@ main {
     transform: rotate(180deg);
 }
 
-/* The Animating Content Drawer */
+/* The Drawer Framework */
 .accordion-content {
-    max-height: 0;
-    overflow: hidden;
+    max-height: 0; /* Forces collapse by default on page load */
+    overflow: hidden; /* Completely clips anything inside when max-height is 0 */
     transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #0d1321;
 }
 
+/* Content Padding padding must ONLY live inside this inner div */
 .content-inner {
     padding: 24px;
     color: var(--text-muted);
-}
-    }
 }
