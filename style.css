@@ -1,130 +1,173 @@
-/* General Page Styles */
-body {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #cccccc; /* Background color from sketch */
-    color: black; /* Default font color */
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* Defines 3 main vertical columns */
-    gap: 20px;
-}
-
-/* Standard text typography resets */
-h1, h2, h3, p {
+/* Base Reset & Variables */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Left Column Content Layout */
-#main-content {
-    grid-column: 1 / 2;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+:root {
+    --bg-color: #0b0f19;       /* Deep matte black/navy */
+    --text-main: #f3f4f6;      /* Off-white */
+    --text-muted: #9ca3af;     /* Medium gray */
+    --accent-blue: #3b82f6;     /* Electric/Royal blue */
+    --border-gray: #1f2937;    /* Dark gray for structural borders */
 }
 
-/* Vertical Content Lines (Black lines from sketch) */
-.content-line {
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* Container wrapper to restrict max width on huge screens */
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-left: 1px solid var(--border-gray);
+    border-right: 1px solid var(--border-gray);
+    min-height: 100vh;
+    background-color: #0d1321;
+}
+
+/* Header Image Section */
+header {
     width: 100%;
-    border-bottom: 2px solid black;
+    height: 220px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); /* Placeholder gradient background */
+    position: relative;
+    border-bottom: 1px solid var(--border-gray);
 }
 
-/* Publications Typography */
-#publications {
-    margin-top: 30px;
-}
-
-#publications h3 {
-    font-size: 1.3em;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.pub-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.pub-details {
-    font-size: 0.95em;
-    line-height: 1.4;
-}
-
-/* Center Column Content (Photo + Main Box) */
-#photo-and-profile {
-    grid-column: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Square Photo Placeholder Frame */
-#photo-placeholder {
-    width: 200px;
-    height: 200px;
-    border: 2px solid grey; /* As outlined in sketch */
+/* Navigation Bar */
+nav {
+    background-color: #070a12;
+    border-bottom: 1px solid var(--border-gray);
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #333333;
 }
 
-/* Main Profile Box with thick double-accent borders */
-#profile-box {
-    width: 100%;
-    border: 4px solid black; /* Inner border */
-    outline: 6px solid #4f738e; /* Outer Blue-Grey frame accent */
-    padding: 20px;
-    background-color: transparent;
-}
-
-/* Profile Typography */
-h1 {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-h2 {
-    font-size: 1.3em;
-    margin-bottom: 20px;
-    color: #444444;
-    font-weight: normal;
-}
-
-.bio-text {
-    line-height: 1.5;
-}
-
-/* Right Column Content (Vertical Navigation Stack) */
-#vertical-menu {
-    grid-column: 3 / 4;
+nav ul {
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 220px; /* Shifts layout down to align below the photo position */
+    width: 100%;
+    max-width: 600px;
 }
 
-/* Button Layout & Styling (White blocks, black frames) */
-.menu-button {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-    padding: 15px 30px;
+nav ul li {
+    flex: 1;
     text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    width: 120px; /* Solid layout block sizing */
-    align-self: flex-end; /* Snaps alignment to the far right page edge */
-    transition: background-color 0.2s ease;
 }
 
-/* Interactive Hover States */
-.menu-button:hover {
-    background-color: #e6e6e6;
+nav ul li a {
+    display: block;
+    padding: 14px 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--accent-blue);
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Main Content Layout */
+main {
+    padding: 40px;
+}
+
+/* Profile Block */
+.profile-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid var(--border-gray);
+    background-color: #1e293b; /* Placeholder color before uploading image */
+    flex-shrink: 0;
+}
+
+.profile-text h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.profile-text .subtitle {
+    font-size: 1.15rem;
+    color: var(--accent-blue);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.profile-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Generic Content Sections below */
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 12px;
+}
+
+.publication-card {
+    background-color: #111827;
+    border: 1px solid var(--border-gray);
+    padding: 24px;
+    border-radius: 6px;
+}
+
+.publication-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.publication-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Responsive Breakpoint for Small Screens */
+@media (max-width: 640px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    main {
+        padding: 20px;
+    }
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 12px 0;
+    }
+    .content-section h2 {
+        font-size: 1.25rem;
+    }
 }
